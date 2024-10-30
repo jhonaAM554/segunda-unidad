@@ -1,0 +1,39 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+     float a=0,q=0,c=0,d=0,r,m,z,s,ñ,b,x,y;
+    float vec[8]={1,2,3,4,5,6,7,8};
+    float num[8]={23,15,30,25,42,35,20,40};
+    for(int i=0;i<8;i++)
+    {
+        a=a+vec[i];
+    }
+    for(int i=0;i<8;i++)
+    {
+        q=q+num[i];
+    }
+    for(int i=0;i<8;i++)
+    {
+        c=c+(vec[i]*num[i]);
+    }
+    for(int i=0;i<8;i++)
+    {
+      d=d+(vec[i]*vec[i]);  
+    }
+    z=a/8;
+    r=q/8;
+    s=(a*q)/8;
+    ñ=(a*a)/8;
+    m=(c-s)/(d-ñ);
+    cout<<"la pendiente es: "<<m;
+    b=r-(m*z);
+    cout<<"\n"<<"el valor de b es:"<<b;
+    cout<<"\ningrese los valores de x,y:"<<endl;
+    cin>>x;
+    y=(m*x)+b;
+    cout<<"\nla prediccion seria:"<<setprecision(6)<<y;
+}    
+    

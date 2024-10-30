@@ -1,0 +1,14 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    float a=1,c;
+    float vec[5]={1,2,3,4,5};
+    for(int i=0;i<5;i++)
+    {
+        a=a*vec[i];
+    }
+    c=pow(a,1.0/5.0);
+    cout<<c;
+}
