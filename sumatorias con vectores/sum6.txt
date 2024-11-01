@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+    float a=0,b=0,c=0,d=0,e=0,f,g,h,j,k,l,m,n;
+    float num[5]={2,3,5,7,8};
+    float vec[5]={14,20,32,42,44};
+    for(int i=0;i<5;i++)
+    {
+        a+=num[i];
+        b+=vec[i];
+        c+=(pow(num[i],2));
+        d+=(pow(vec[i],2));
+        e+=(vec[i]*num[i]);
+    }
+    f=a/5;
+    g=b/5;
+    h=(c/5)-pow(f,2);
+    j=sqrt(h);
+    k=(d/5)-pow(g,2);
+    l=sqrt(k);
+    m=(e/5)-(f*g);
+    n=(m/(j*l))*(100/100);
+    cout<<setprecision(3)<<n;
+}
