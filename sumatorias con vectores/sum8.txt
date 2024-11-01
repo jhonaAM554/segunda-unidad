@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    float m=0,n=0,c=0,d=0,b,a,x,y;
+    float num[5]={1,2,3,4,5};
+    float vec[5]={1024,1105,1140,1200,1188};
+    for(int i=0;i<5;i++)
+    {
+        m+=num[i];
+        n+=vec[i];
+        c+=(num[i]*vec[i]);
+        d+=(pow(num[i],2));
+    }
+    b=((5*c)-(m*n))/((5*d)-pow(m,2));
+    a=(n-(b*m))/5;
+    cout<<"la formula es:"<<endl<<"y=a+b*x"<<endl<<"ingrese valor de x:"<<endl;
+    cin>>x;
+    y=a+(b*x);
+    cout<<"la prediccion es:\n"<<y;
+}
+    
