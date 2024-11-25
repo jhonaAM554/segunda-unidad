@@ -1,0 +1,57 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    int m[100][100],n;
+    cout<<"ingrese el tamaño de la matriz cuadrada:";
+    cin>>n;
+    cout<<"introduce los elementos de la matriz:"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cout<<"ingrese numero["<<i<<"]["<<j<<"]:";
+            cin>>m[i][j];
+        }
+    }
+    cout<<"matriz original:"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cout<<m[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+ cout<<"matriz cambiada:"<<endl;
+ for(int i=0;i<n/2;i++)
+ {
+  for(int j=0;j<n/2;j++)
+  {
+      int temp; 
+         temp=m[i][j];
+         m[i][j]=m[i][(n/2)+j];
+        m[i][(n/2)+j]=temp;
+  }
+ }
+  for(int i=n/2;i<n;i++)
+ {
+  for(int j=0;j<n/2;j++)
+  {
+      int temp;
+         temp=m[i][j];
+         m[i][j]=m[i][(n/2)+j];
+        m[i][(n/2)+j]=temp;
+  }
+ }
+  for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cout<<m[i][j]<<" ";
+        }
+        cout<<endl;
+   }
+
+}

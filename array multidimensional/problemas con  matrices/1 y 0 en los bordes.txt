@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    // Solicitar el tamaño de la matriz
+    cout << "Introduce el tamaño de la matriz cuadrada: ";
+    cin >> n;
+
+    // Crear la matriz original
+    int matriz[100][100];
+    cout << "Introduce los elementos de la matriz:" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+        }
+    }
+
+    // Mostrar la matriz original
+    cout << "\nMatriz original:" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << matriz[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    // Crear la matriz transformada
+    int matriz_transformada[100][100];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            // Modificar solo los bordes
+            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) {
+                if ((i + j) % 2 == 0) { // Alternar entre 1 y 0
+                    matriz_transformada[i][j] = 0;
+                } else {
+                    matriz_transformada[i][j] = 1;
+                }
+            } else {
+                // Conservar los valores internos
+                matriz_transformada[i][j] = matriz[i][j];
+            }
+        }
+    }
+
+    // Mostrar la matriz transformada
+    cout << "\nMatriz transformada (bordes con 1's y 0's):" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << matriz_transformada[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
